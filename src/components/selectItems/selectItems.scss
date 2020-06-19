@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 0 0 0;
+}
+
+.ant-form-item {
+    text-align: start;
+}
+
+label, .ant-form-item-label {
+    font-weight: 600;
+}
+
+.ant-form-item-children {
+    input {
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.ant-form-item {
+    padding: 0px 5rem 3rem 1rem;
+}

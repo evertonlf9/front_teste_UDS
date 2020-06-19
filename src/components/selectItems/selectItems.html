@@ -1,0 +1,84 @@
+<div class="hello">    
+    <a-form :layout="formLayout">
+        <a-form-item
+          label="Tamanho"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+
+            <a-radio-group  @change="onChangeSize" v-decorator="['radio-group']" :value="getSizeSelected">
+                <a-radio :style="radioStyle" :value="item" v-for="item in size" :key="item.id">
+                  {{item.label}} <strong>{{formatValue(item.value)}}</strong>
+                </a-radio>
+            </a-radio-group>
+          
+        </a-form-item>
+        <a-form-item
+          label="Sabor"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          
+          <a-radio-group @change="onChangeFlavor" v-decorator="['radio-group']" :value="getFlavorSelected">
+            <a-radio :style="radioStyle" :value="item" v-for="item in flavor" :key="item.id" :disabled="!(getSizeSelected && getSizeSelected.id)">
+              {{item.label}}
+            </a-radio>
+          </a-radio-group>
+
+        </a-form-item>
+      <a-form-item
+          label="Personalização">
+
+          <a-checkbox @change="onChangeCustomization" :checked="checkedCustomSelected(item)" :value="item" v-for="(item, index) in customization" :key="item.id" :disabled="!(getFlavorSelected && getFlavorSelected.id)">
+            {{item.label}} <strong>{{item.value ? `Adicional de ${formatValue(item.value)}` : ''}}</strong>
+          </a-checkbox>
+
+        </a-form-item>
+        <div style="display: flex; padding: 0 5rem 3rem 1rem;">
+          <a-form-item
+            label="Tempo de espera (em minutos)"
+            style="padding: 0px 0rem 0 5rem;"
+        >
+            <a-input :value="getTime"  disabled="disabled"/>
+        </a-form-item>
+        
+        <a-form-item
+            label="Valor total"
+            style="padding: 0 5rem 0 1rem;"
+        >
+            <a-input :value="getTotal" disabled="disabled"/>
+        </a-form-item>
+        </div>
+        <a-form-item :wrapper-col="buttonItemLayout.wrapperCol" style="width: 50%; text-align: center;">
+          <a-button type="primary" @click="onClickAddOrder" v-if="(getSizeSelected.id && getFlavorSelected.id)">
+            Adicionar pedido
+          </a-button>
+        </a-form-item>
+    </a-form>
+      
+  <Table :cols="columns" :dataSource="this.getDataList" :onHandlerEdit="handlerEdit"/>
+
+  <div>
+    <a-form :layout="formLayout">
+      <div style="display: flex; padding: 0 5rem 3rem 1rem;">
+        <a-form-item
+            label="Tempo total de espera do pedido (em minutos)"
+            style="padding: 0px 0rem 0 5rem;"
+        >
+            <a-input :value="fullTime"  disabled="disabled"/>
+        </a-form-item>
+        <a-form-item
+          label="Valor total do pedido"
+          style="padding: 0px 0rem 0 5rem;"
+        >
+            <a-input :value="fullTotal"  disabled="disabled"/>
+        </a-form-item>
+      </div>
+      <a-form-item :wrapper-col="buttonItemLayout.wrapperCol" style="width: 50%; text-align: center;">
+        <a-button type="primary" @click="onClickAddOrder" v-if="(getDataList && getDataList.length > 0)">
+          Finalizar pedido
+        </a-button>
+      </a-form-item>
+    </a-form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.ant-layout-sider-has-trigger {
+    height: 100%;
+}
+
+.ant-layout-sider, .ant-menu-dark{
+    background: #581f4c7a !important;
+}
+
+.ant-form-item-label {
+    label {
+        font-weight: 600;
+        color: #6d2c77 !important;
+    }
+}
+
+.ant-layout-sider-trigger {
+    background: #81597a  !important;
+    
+    .anticon {
+        color: #662770;
+    }
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: #420f39 !important;
+}
+
+.ant-menu-item > a {
+    color: rgb(102, 39, 112);
+}
+    

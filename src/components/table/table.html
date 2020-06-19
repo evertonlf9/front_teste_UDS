@@ -1,0 +1,14 @@
+<div id="table-component">
+  <a-table :columns="columns" :data-source="data">  
+      
+    <template slot="action" slot-scope="text, record">
+      <a-popconfirm
+        v-if="data.length"
+        title="Deseja realmente editar o seu pedido?"
+        @confirm="() => onEdit(record)"
+      >
+        <a href="javascript:;">Editar pedido</a>
+      </a-popconfirm>
+    </template>
+  </a-table>
+</div>

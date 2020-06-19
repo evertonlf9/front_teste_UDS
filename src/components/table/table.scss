@@ -1,0 +1,12 @@
+#table-component {
+    padding: 0 5rem;
+
+    .ant-table-pagination {
+        display: none !important;
+    }
+    
+    .ant-table-column-title {
+        font-size: 16px;
+        color: #662770;
+    }
+}

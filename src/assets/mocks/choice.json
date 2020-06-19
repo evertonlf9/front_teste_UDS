@@ -1,0 +1,65 @@
+{
+    "size":[
+        {
+            "id": 1,
+            "label": "pequeno (300m)",
+            "time": 5,
+            "value": 10,
+            "description" : ""
+        },
+        {   
+            "id": 2,
+            "label": "médio (500m)",
+            "time": 7,
+            "value": 13,
+            "description" : ""
+        },
+        {   
+            "id": 3,
+            "label": "grande (700m)",
+            "time": 10,
+            "value": 15,
+            "description" : ""
+        }
+    ],
+    "flavor": [
+        {   
+            "id": 1,
+            "label": "morango",
+            "time": 0,
+            "description" : ""
+        },
+        {   
+            "id": 2,
+            "label": "banana",
+            "time": 0,
+            "description" : ""
+        },
+        {   
+            "id": 3,
+            "label": "kiwi",
+            "time": 5,
+            "description" : ""
+        }
+    ],
+    "customization": [
+        {
+            "label": "granola",
+            "value": 0,
+            "time": 0,
+            "description" : ""
+        },
+        {
+            "label": "paçoca",
+            "value": 3,
+            "time": 3,
+            "description" : ""
+        },
+        {
+            "label": "leite ninho",
+            "value": 3,
+            "time": 0,
+            "description" : ""
+        }
+    ]
+}
