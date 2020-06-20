@@ -2,6 +2,7 @@
 <script>
 import Table from "../table/table";
 import HomeMixin from "../../core/store/home/store/mixin";
+import Services from '../../core/http/services';
 
 const columns = [
   {
@@ -42,6 +43,7 @@ export default {
   data() {
     return {
       columns,
+      isLoading: false,
       time: "",
       total: "",
       fullTime: "",
@@ -52,67 +54,13 @@ export default {
         height: "30px",
         lineHeight: "30px"
       },
-      size: [
-        {
-          id: 1,
-          label: "Pequeno (300ml)",
-          time: 5,
-          value: 10
-        },
-        {
-          id: 2,
-          label: "Médio (500ml)",
-          time: 7,
-          value: 13
-        },
-        {
-          id: 3,
-          label: "Grande (700ml)",
-          time: 10,
-          value: 15
-        }
-      ],
-      flavor: [
-        {
-          id: 1,
-          label: "Morango",
-          time: 0
-        },
-        {
-          id: 2,
-          label: "Banana",
-          time: 0
-        },
-        {
-          id: 3,
-          label: "Kiwi",
-          time: 5
-        }
-      ],
-      customization: [
-        {
-          id: 1,
-          label: "Granola",
-          value: 0,
-          time: 0
-        },
-        {
-          id: 2,
-          label: "Paçoca",
-          value: 3,
-          time: 3
-        },
-        {
-          id: 3,
-          label: "Leite ninho",
-          value: 3,
-          time: 0
-        }
-      ]
     };
   },
   components: {
     Table
+  },
+  created () {
+    this.getConfigs()
   },
   computed: {
     formItemLayout() {
@@ -134,6 +82,16 @@ export default {
     }
   },
   methods: {
+    async getConfigs () {
+
+      this.isLoading = true;
+      const { data } = await Services.get();
+      this.isLoading = false;
+
+       this.ActionSetSize(data.size);
+       this.ActionSetFlavor(data.flavor);
+       this.ActionSetCustomization(data.customization);
+    },
     findItemInList(item) {
       const list = this.getCustomizationSelected;
       return list.filter(_item => _item.id === item.id);

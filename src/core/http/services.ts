@@ -1,5 +1,9 @@
-import home from "../store/home/services";
+import Repository from "./";
 
-export default {
-  home
+const base = {
+  get() {
+    return Repository.get('/mocks/choice.json');
+  }
 };
+
+export default base;

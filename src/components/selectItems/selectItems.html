@@ -1,6 +1,6 @@
 <div class="hello">    
     <a-form :layout="formLayout">
-      <div>
+      <div style="width: 100%;">
         <a-form-item
           label="Tamanho"
           :label-col="formItemLayout.labelCol"
@@ -8,7 +8,7 @@
         >
 
             <a-radio-group  @change="onChangeSize" v-decorator="['radio-group']" :value="getSizeSelected">
-                <a-radio :style="radioStyle" :value="item" v-for="item in size" :key="item.id">
+                <a-radio :style="radioStyle" :value="item" v-for="item in getSize" :key="item.id">
                   {{item.label}} <strong>{{formatValue(item.value)}}</strong>
                 </a-radio>
             </a-radio-group>
@@ -22,7 +22,7 @@
         >
           
           <a-radio-group @change="onChangeFlavor" v-decorator="['radio-group']" :value="getFlavorSelected">
-            <a-radio :style="radioStyle" :value="item" v-for="item in flavor" :key="item.id" :disabled="!(getSizeSelected && getSizeSelected.id)">
+            <a-radio :style="radioStyle" :value="item" v-for="item in getFlavor" :key="item.id" :disabled="!(getSizeSelected && getSizeSelected.id)">
               {{item.label}}
             </a-radio>
           </a-radio-group>
@@ -33,7 +33,7 @@
         class="container-checkbox"
         label="Personalização">
 
-          <a-checkbox @change="onChangeCustomization" :checked="checkedCustomSelected(item)" :value="item" v-for="(item, index) in customization" :key="item.id" :disabled="!(getFlavorSelected && getFlavorSelected.id)">
+          <a-checkbox @change="onChangeCustomization" :checked="checkedCustomSelected(item)" :value="item" v-for="(item, index) in getCustomization" :key="item.id" :disabled="!(getFlavorSelected && getFlavorSelected.id)">
             {{item.label}} <strong>{{item.value ? `Adicional de ${formatValue(item.value)}` : ''}}</strong>
           </a-checkbox>
 

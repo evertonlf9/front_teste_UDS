@@ -1,7 +1,7 @@
 export default {
-  size: {},
-  flavor: {},
-  customization: {},
+  size: [],
+  flavor: [],
+  customization: [],
   sizeSelected: {},
   flavorSelected: {},
   customizationSelected: [],

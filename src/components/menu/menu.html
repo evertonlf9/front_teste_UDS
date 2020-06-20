@@ -8,7 +8,7 @@
         collapsible
     >
         <div class="logo" >
-            <a-button @click="openMenu">
+            <a-button @click="openMenu" v-if="getMenuOpen">
                 <a-icon type="menu" />
             </a-button>
         </div>
