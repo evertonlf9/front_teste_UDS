@@ -51,7 +51,7 @@ label, .ant-form-item-label {
     form {
 
         .container-checkbox {
-            padding: 0 0 0 4rem !important;
+            padding: 0 0 0 5rem !important;
             display: inline-block !important;
         }
 
@@ -64,5 +64,24 @@ label, .ant-form-item-label {
     .container-finish {
         display: grid; 
         padding: 0 4rem 3rem 4rem;
+    }
+}
+
+@media only screen and (max-width: 495px) {
+
+    form {
+        .container-checkbox{
+          padding: 0 0 0 22px !important;
+          display: inline-block !important;
+        }
+    
+        .container-values {
+          padding: 0 4rem 0 3rem;
+        }
+    
+    }
+
+    .container-finish {
+        padding: 0 4rem 3rem 3rem;
     }
 }

@@ -9,3 +9,4 @@ export const SET_TOTAL = "HOME/SET_TOTAL";
 export const SET_TIME = "HOME/SET_TIME";
 export const SET_DATA_LIST = "HOME/SET_DATA_LIST";
 export const SET_ITEM = "HOME/SET_ITEM";
+export const SET_ALERT_SHOW = "HOME/SET_ALERT_SHOW";

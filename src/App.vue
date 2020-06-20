@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <div class="alert" v-if="getAlertShow">
+      <a-alert
+        close-text="Fechar"
+        message="Pedido realizado com sucesso"
+        description="Obrigado pela preferência."
+        type="success"
+        show-icon
+        closable
+        @close="onClose"
+      />
+    </div>
     <a-layout id="components-layout-demo-responsive">
       <Menu />
       <a-layout>
@@ -24,13 +35,23 @@
 </template>
 
 <script>
+import HomeMixin from "./core/store/home/store/mixin";
 import Header from "./components/header/header";
 import Menu from "./components/menu/menu.vue";
 
 export default {
+  name: "App",
+  mixins: [HomeMixin],
   components: {
     Header,
     Menu
+  },
+  methods: {
+    onClose(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.ActionSetAlertShow(false);
+    }
   }
 };
 </script>

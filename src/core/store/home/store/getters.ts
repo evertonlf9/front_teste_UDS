@@ -1,3 +1,4 @@
+export const getAlertShow = ({ alertShow }: any) => alertShow;
 export const getSize = ({ size }: any) => size;
 export const getFlavor = ({ flavor }: any) => flavor;
 export const getCustomization = ({ customization }: any) => customization;

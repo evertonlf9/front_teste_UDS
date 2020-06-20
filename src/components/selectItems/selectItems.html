@@ -62,7 +62,7 @@
 
     </a-form>
       
-  <Table :cols="columns" :dataSource="this.getDataList" :onHandlerEdit="handlerEdit"/>
+  <Table :cols="columns" :dataSource="getDataList" :onHandlerEdit="handlerEdit" />
 
   <div>
     <a-form :layout="formLayout" style="padding: 0;">
@@ -81,7 +81,7 @@
         </a-form-item>
       </div>
       <a-form-item :wrapper-col="buttonItemLayout.wrapperCol" style="width: 50%; text-align: center;">
-        <a-button type="primary" @click="onClickAddOrder" v-if="(getDataList && getDataList.length > 0)">
+        <a-button type="primary" @click="onClickFinished" v-if="(getDataList && getDataList.length > 0)">
           Finalizar pedido
         </a-button>
       </a-form-item>

@@ -1,6 +1,9 @@
 import * as types from "./mutation-types";
 
 export default {
+  [types.SET_ALERT_SHOW](state: any, payload: any) {
+    state.alertShow = payload;
+  },
   [types.SET_TIME](state: any, payload: any) {
     state.time = payload;
   },
@@ -40,9 +43,6 @@ export default {
     state.id = null;
     state.time = "";
     state.total = "";
-    state.size = {};
-    state.flavor = {};
-    state.customization = {};
     state.sizeSelected = {};
     state.flavorSelected = {};
     state.customizationSelected = [];

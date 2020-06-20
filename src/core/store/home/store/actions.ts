@@ -47,3 +47,7 @@ export const ActionSetDataList = ({ commit }: any, payload: any) => {
 export const ActionSetClear = ({ commit }: any, payload: any) => {
   commit(types.SET_CLEAR, payload);
 };
+
+export const ActionSetAlertShow = ({ commit }: any, payload: any) => {
+  commit(types.SET_ALERT_SHOW, payload);
+};

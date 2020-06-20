@@ -210,9 +210,9 @@ export default {
       let label = "";
       list.forEach((elem, id) => {
         if (id === 0) {
-          label += elem.label;
+          label += `${elem.label}${elem.value ? ` + RS ${elem.value},00` : ''}`;
         } else {
-          label += `, ${elem.label}`;
+          label += `, ${elem.label}${elem.value ? ` + RS ${elem.value},00` : ''}`;
         }
       });
       return label;
@@ -230,10 +230,24 @@ export default {
           customization: this.getCustomLabel(item.customizationSelected)
         });
       }
-
+    
       this.ActionSetDataList(data);
       this.getFullValueAndTime();
       this.ActionSetClear();
+
+    },
+    onClickFinished(e) {
+
+      this.time = "";
+      this.total = "";
+      this.fullTime = "";
+      this.fullTotal = "";
+
+      let data = this.getDataList;
+      data = data.splice(0, data.length);
+      this.ActionSetDataList(data);
+      this.ActionSetClear();
+      this.ActionSetAlertShow(true);
     }
   }
 };

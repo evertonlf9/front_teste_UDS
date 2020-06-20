@@ -8,5 +8,6 @@ export default {
   data: [],
   time: "",
   total: "",
-  key: null
+  key: null,
+  alertShow: false
 };
