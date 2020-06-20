@@ -4,31 +4,34 @@ $break-medium: 768px;
 $break-large: 992px;
 $break-extra-large: 1200px;
 
-  .ant-layout {
-    height: 100%;
-  }
+html, body {
+  overflow: hidden;
+}
 
-  main > div{
-    background: rgba(88, 27, 76, 0.16);
-    height: 100%;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  text-align: center;
+  color: #2c3e50;
 
-  
-  .ant-radio-disabled + span, .ant-checkbox-disabled + span {
-    color: rgba(0, 0, 0, 0.65) !important;
-  }
+  width: 100%;
 
-    .logo-acai {
-      height: 55px;
-      margin: 5px;
-      background: url('./assets/img/tigela.png') no-repeat;
-      background-size: contain;
-      right: 2rem;
-      width: 96px;
-      position: absolute;
-    }  
-  
   #components-layout-demo-responsive {
+
+    main { 
+      overflow: hidden;
+      height: calc(100vh - 95px);
+      overflow-y: auto;
+    }
+
+    .ant-layout-footer {
+      color: #420f39c7 !important;
+      font-weight: 600;
+      padding: 8px 50px !important;
+      background: #d7cfda !important;
+    }
+    
     .logo {
       height: 32px;
       margin: 16px;
@@ -44,73 +47,145 @@ $break-extra-large: 1200px;
       position: relative;
     }  
   }
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
-    text-align: center;
-    color: #2c3e50;
-  
-    width: 100%;
-    height: 100%;
+}
+
+.ant-table-body {overflow-x: auto;}
+
+.container-checkbox {
+  .ant-form-item-control-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 1rem;
+    width: 47%;
   }
-  
-  #nav {
-    padding: 30px;
-  
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-  
-      &.router-link-exact-active {
-        color: #42b983;
-      }
+}
+
+.ant-form-item-label {
+  label {
+      font-weight: 600;
+      color: #6d2c77 !important;
+  }
+}
+
+.ant-pagination{display: none;}
+
+@media only screen and (max-width: $break-small) {
+
+  .home {
+    margin: 1rem !important;
+  }
+
+  .container-checkbox {
+    padding: 0 0 0 6rem !important;
+    display: inline-block !important;
+
+    .ant-form-item-control-wrapper {
+      padding: 0 0 0 0;
+      width: 90%;
     }
   }
 
-  .ant-layout-footer {
-    color: #420f39c7 !important;
-    font-weight: 600;
-    padding: 8px 50px !important;
-    background: #d7cfda !important;
+  #menu-component {
+    height: auto;
   }
 
-  @media only screen and (max-width: $break-small) {
-    .ant-layout-sider {
-      position: absolute !important;
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-      min-width: 100% !important;
-      width: 100% !important;
-      margin-left: -200px;
-      background: transparent !important;
-      z-index: 99;
+  #table-component {
 
-      .ant-layout-sider-children {
-        width: 200px;
-        background: #9a7b96;
-
-        .ant-menu-item {
-          padding-left: 0 !important;
-        }
-
-        .ant-menu-inline-collapsed {
-          width: 200px !important; 
-
-          .ant-menu-item .anticon + span {
-            max-width: 100px;
-            opacity: 1;
-          }
-
-          .anticon-user {
-            margin-right: 10px !important;
-            font-size: 16px;
-          }
-        }
-      }
-
-      .ant-layout-sider-trigger {
-        width: 200px !important;
-      }
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+      padding: 5px 5px;
+      overflow-wrap: break-word;
     }
   }
+
+  form {
+
+    .container-checkbox {
+      padding: 0 0 0 4rem !important;
+      display: inline-block !important;
+    }
+
+    .container-values {
+      display: grid;
+      padding: 0 4rem 0 4rem;
+    }
+    
+  }
+
+  .container-finish {
+    display: grid; 
+    padding: 0 4rem 3rem 4rem;
+  }
+
+  .ant-form-inline .ant-form-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 285px !important;
+  }
+
+  .ant-layout-sider {
+    position: absolute !important;
+    // flex: 0 0 100% !important;
+    // max-width: 100% !important;
+    // min-width: 100% !important;
+    // width: 100% !important;
+    margin-left: -200px;
+    background: transparent !important;
+    z-index: 99;
+
+    .ant-layout-sider-children {
+      width: 200px;
+      background: #9a7b96;
+
+      .ant-menu-item {
+        padding-left: 0 !important;
+      }
+
+      .ant-menu-inline-collapsed {
+        width: 200px !important; 
+
+        .ant-menu-item .anticon + span {
+          max-width: 100px;
+          opacity: 1;
+        }
+
+        .anticon-user {
+          margin-right: 10px !important;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .ant-layout-sider-trigger {
+      width: 200px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: $break-extra-small) {
+
+  .home {
+    background: rgba(88, 27, 76, 0.07);
+    margin: 0rem !important;
+  }
+
+  .ant-form-inline .ant-form-item {
+    padding: 0 0 0 1rem !important;
+    min-width: 298px !important;
+  }
+
+  form {
+    .container-checkbox{
+      padding: 0 0 0 22px !important;
+      display: inline-block !important;
+    }
+
+    .container-values {
+      padding: 0 4rem 0 3rem;
+    }
+
+    .container-finish {
+      padding: 0 4rem 3rem 3rem;
+    }
+  }
+
+}

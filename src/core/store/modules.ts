@@ -1,5 +1,5 @@
-import { store as home } from './home';
+import { store as home } from "./home";
 
 export default {
   home
-}
+};

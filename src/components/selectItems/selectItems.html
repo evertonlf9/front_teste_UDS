@@ -1,5 +1,6 @@
 <div class="hello">    
     <a-form :layout="formLayout">
+      <div>
         <a-form-item
           label="Tamanho"
           :label-col="formItemLayout.labelCol"
@@ -13,6 +14,7 @@
             </a-radio-group>
           
         </a-form-item>
+
         <a-form-item
           label="Sabor"
           :label-col="formItemLayout.labelCol"
@@ -26,18 +28,20 @@
           </a-radio-group>
 
         </a-form-item>
-      <a-form-item
-          label="Personalização">
+
+        <a-form-item
+        class="container-checkbox"
+        label="Personalização">
 
           <a-checkbox @change="onChangeCustomization" :checked="checkedCustomSelected(item)" :value="item" v-for="(item, index) in customization" :key="item.id" :disabled="!(getFlavorSelected && getFlavorSelected.id)">
             {{item.label}} <strong>{{item.value ? `Adicional de ${formatValue(item.value)}` : ''}}</strong>
           </a-checkbox>
 
         </a-form-item>
-        <div style="display: flex; padding: 0 5rem 3rem 1rem;">
+      </div>
+        <div class="container-values">
           <a-form-item
             label="Tempo de espera (em minutos)"
-            style="padding: 0px 0rem 0 5rem;"
         >
             <a-input :value="getTime"  disabled="disabled"/>
         </a-form-item>
@@ -49,18 +53,20 @@
             <a-input :value="getTotal" disabled="disabled"/>
         </a-form-item>
         </div>
-        <a-form-item :wrapper-col="buttonItemLayout.wrapperCol" style="width: 50%; text-align: center;">
-          <a-button type="primary" @click="onClickAddOrder" v-if="(getSizeSelected.id && getFlavorSelected.id)">
+
+        <a-form-item :wrapper-col="buttonItemLayout.wrapperCol" style="width: 50%; text-align: center; padding: 2rem 0 0 !important;" v-if="(getSizeSelected.id && getFlavorSelected.id)">
+          <a-button type="primary" @click="onClickAddOrder">
             Adicionar pedido
           </a-button>
         </a-form-item>
+
     </a-form>
       
   <Table :cols="columns" :dataSource="this.getDataList" :onHandlerEdit="handlerEdit"/>
 
   <div>
-    <a-form :layout="formLayout">
-      <div style="display: flex; padding: 0 5rem 3rem 1rem;">
+    <a-form :layout="formLayout" style="padding: 0;">
+      <div class="container-finish">
         <a-form-item
             label="Tempo total de espera do pedido (em minutos)"
             style="padding: 0px 0rem 0 5rem;"
@@ -69,7 +75,7 @@
         </a-form-item>
         <a-form-item
           label="Valor total do pedido"
-          style="padding: 0px 0rem 0 5rem;"
+          style="padding: 0px 0rem 0 2rem;"
         >
             <a-input :value="fullTotal"  disabled="disabled"/>
         </a-form-item>

@@ -1,27 +1,31 @@
 <template>
   <div id="app">
-    <a-layout id="components-layout-demo-responsive">    
-    <Menu />
-    <a-layout>
-      <a-layout-header :style="{ background: 'rgba(88, 27, 76, 0.16)', padding: 0, display: 'flex' }" >
-        <Header />
-      </a-layout-header>        
-      <a-layout-content :style="{ margin: '2rem' }">
-        <div>
+    <a-layout id="components-layout-demo-responsive">
+      <Menu />
+      <a-layout>
+        <a-layout-header
+          :style="{
+            background: 'rgba(88, 27, 76, 0.16)',
+            padding: 0,
+            display: 'flex'
+          }"
+        >
+          <Header />
+        </a-layout-header>
+        <a-layout-content>
           <router-view />
-        </div>
-      </a-layout-content>
-      <a-layout-footer style="textAlign: center">
-        Açai ©2020 Created by Everton
-      </a-layout-footer>
+        </a-layout-content>
+        <a-layout-footer style="textAlign: center">
+          Açai ©2020 Created by Everton
+        </a-layout-footer>
+      </a-layout>
     </a-layout>
-  </a-layout>
   </div>
 </template>
 
 <script>
-import Header from './components/header/header';
-import Menu from './components/menu/menu.vue';
+import Header from "./components/header/header";
+import Menu from "./components/menu/menu.vue";
 
 export default {
   components: {
@@ -32,5 +36,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import './app.scss';
+@import "./app.scss";
 </style>

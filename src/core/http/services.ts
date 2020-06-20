@@ -1,5 +1,5 @@
-import home from '../store/home/services'
+import home from "../store/home/services";
 
 export default {
-  home,
-}
+  home
+};

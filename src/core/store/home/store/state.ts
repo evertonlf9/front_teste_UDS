@@ -6,7 +6,7 @@ export default {
   flavorSelected: {},
   customizationSelected: [],
   data: [],
-  time: '',
-  total: '',
+  time: "",
+  total: "",
   key: null
-}
+};

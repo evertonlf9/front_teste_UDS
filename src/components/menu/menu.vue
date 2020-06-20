@@ -2,10 +2,10 @@
 
 <script>
 export default {
-  name: 'Table',
+  name: "Table",
   data() {
     return {
-      collapsed: false,
+      collapsed: false
     };
   },
   methods: {
@@ -14,11 +14,11 @@ export default {
     },
     onBreakpoint(broken) {
       // console.log(broken);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-@import './menu.scss'
+@import "./menu.scss";
 </style>

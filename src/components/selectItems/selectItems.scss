@@ -3,6 +3,22 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     padding: 3rem 0 0 0;
+
+    .container-checkbox {
+        padding: 0;
+        display: flex ;
+        justify-content: center;        
+    }
+
+    .container-values {
+        display: flex; 
+        padding: 1rem 0 0 0;
+    }
+}
+
+.container-finish {
+    display: flex; 
+    padding: 0 5rem 3rem 1rem;
 }
 
 .ant-form-item {
@@ -22,5 +38,31 @@ label, .ant-form-item-label {
 }
 
 .ant-form-item {
-    padding: 0px 5rem 3rem 1rem;
+    padding: 0px 5rem 1rem 1rem;
+    margin-right: 0 !important;
+}
+
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 576px) {
+
+    form {
+
+        .container-checkbox {
+            padding: 0 0 0 4rem !important;
+            display: inline-block !important;
+        }
+
+        .container-values {
+            display: grid;
+            padding: 0 4rem 0 4rem;
+        }
+    }
+
+    .container-finish {
+        display: grid; 
+        padding: 0 4rem 3rem 4rem;
+    }
 }

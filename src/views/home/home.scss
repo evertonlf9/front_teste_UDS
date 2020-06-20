@@ -1,6 +1,10 @@
 .home {
-    // background: url('../../assets/img/cream.png') no-repeat;
-    // background-size: cover;
-    height: 100%;
     padding: 0 0 2rem 0;
+    background: rgba(88, 27, 76, 0.16);
+    margin: 2rem;
+
+    .ant-radio-disabled + span, .ant-checkbox-disabled + span {
+        color: rgba(0, 0, 0, 0.65) !important;
+    }
+    
 }
