@@ -1,6 +1,9 @@
 import * as types from "./mutation-types";
 
 export default {
+  [types.MENU_OPEN](state: any, payload: any) {
+    state.menuOpen = !state.menuOpen;
+  },  
   [types.SET_ALERT_SHOW](state: any, payload: any) {
     state.alertShow = payload;
   },

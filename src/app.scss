@@ -92,6 +92,8 @@ html, body {
 
 @media only screen and (max-width: $break-small) {
 
+  .btn-mobile-menu { display: inline-block !important;}
+
   .home {
     margin: 1rem !important;
   }

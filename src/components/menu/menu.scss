@@ -24,4 +24,17 @@
     .ant-menu-item > a {
         color: rgb(102, 39, 112);
     }
+
+    .menu-mobile-open {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        margin: 0px;
+        background: transparent !important;
+
+        .ant-layout-sider-trigger {
+            pointer-events: none;
+        }
+    }
 }    

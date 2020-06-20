@@ -9,5 +9,6 @@ export default {
   time: "",
   total: "",
   key: null,
-  alertShow: false
+  alertShow: false,
+  menuOpen: false
 };

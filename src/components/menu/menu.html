@@ -1,21 +1,26 @@
 <div id="menu-component">
     <a-layout-sider
-      breakpoint="lg"      
-      @collapse="onCollapse"
-      @breakpoint="onBreakpoint"
-      v-model="collapsed" 
-      collapsible
+        v-bind:class="{ 'menu-mobile-open': getMenuOpen }"
+        breakpoint="lg"      
+        @collapse="onCollapse"
+        @breakpoint="onBreakpoint"
+        v-model="collapsed" 
+        collapsible
     >
-        <div class="logo" />
+        <div class="logo" >
+            <a-button @click="openMenu">
+                <a-icon type="menu" />
+            </a-button>
+        </div>
         <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
             <a-menu-item key="1">
                 <a-icon type="user" />
                 <span class="nav-text">Comprar</span>
             </a-menu-item>
-            <a-menu-item key="2">
+            <!-- <a-menu-item key="2">
                 <a-icon type="video-camera" />
                 <span class="nav-text"></span>
-            </a-menu-item>
+            </a-menu-item> -->
         </a-menu>
     </a-layout-sider>
 </div>

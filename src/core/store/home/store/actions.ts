@@ -51,3 +51,7 @@ export const ActionSetClear = ({ commit }: any, payload: any) => {
 export const ActionSetAlertShow = ({ commit }: any, payload: any) => {
   commit(types.SET_ALERT_SHOW, payload);
 };
+
+export const ActionMenuOpen = ({ commit }: any, payload: any) => {
+  commit(types.MENU_OPEN, payload);
+};
